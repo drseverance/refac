@@ -1,29 +1,24 @@
-public class Main 
+public class Main
 {
-    public static void main(String[] args) {
-        Cal c = new Cal();
-        System.out.println(c.adder(1,1.1));
-        System.out.println(c.adder(1.1,1.1));
-
-    }
-}
-
-class Cal{
-    int adder(int a, int b){
-        return a + b;
+    
+    public static void main(String [] args) {
+        System.out.println(fac(5));
+         System.out.println(reFac(5));
     }
     
-    int adder (int a, int b, int c){
-        return a + b + c;
+    static long fac(int n){
+        long fact = n;
+        for(int i =n; i>1; i--){
+            fact = fact * (i-1);
+        }
+        return fact;
     }
     
-    double adder (double a, double b){
-        System.out.println("It's me!");
-        return a + b;
+    static long reFac(int n){
+        long fact = n;
+        if (n > 1) {
+            fact = reFac(n-1) * n;
+        }
+        return fact;
     }
-    
-    double adder (int a, double b){
-        return a + b;
-    }
-    
 }
